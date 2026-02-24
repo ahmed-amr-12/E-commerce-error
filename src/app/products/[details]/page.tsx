@@ -1,26 +1,28 @@
-import getSingleProduct from "@/API/getSingleProduct";
+import getSingleProduct from "@/Actions/getSingleProduct";
 import { Button } from "@/components/ui/button";
 import { CardFooter } from "@/components/ui/card";
 import React from "react";
+import AddToCartBtn from "../AddToCartBtn";
+
+
 
 export default async function Details({ params }: any) {
-  let { details } = params;
+  let { details } = await params;
 
   // console.log(details);
 
-console.log(params);
-
+  console.log(params);
 
   let data = await getSingleProduct(details);
   if (!data) {
     return <span className="loader"></span>;
   }
-  
+
   console.log(data);
 
   return (
     <div className="">
-      <h2>product details</h2>
+      <h2 className="font-bold text-center p-5 mt-6">product details</h2>
 
       <div className="container w-[80%] mx-auto  ">
         <div className="flex  gap-5  items-center">
@@ -41,16 +43,14 @@ console.log(params);
                 </p>
               </div>
             </CardFooter>
-            <Button
-              className="w-full mt-3 bg-slate-900 text-white"
-              variant="outline"
-            >
-              {" "}
-              <i className="fa-solid fa-plus"></i> Add To Cart{" "}
-            </Button>
+<Button className="w-full mt-3 bg-slate-900 text-white" asChild>
+                <AddToCartBtn productId={data._id} />
+              </Button>
           </div>
         </div>
       </div>
     </div>
   );
 }
+
+

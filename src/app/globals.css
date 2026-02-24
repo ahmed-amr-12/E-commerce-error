@@ -1,5 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "swiper/css";
+@import 'swiper/css/pagination';
+
 
 
 @custom-variant dark (&:is(.dark *));
@@ -181,3 +184,11 @@
   }
 }
     
+
+.swiper-pagination {
+position: static !important;
+}
+
+body{
+  background-color:#3d4450
+}

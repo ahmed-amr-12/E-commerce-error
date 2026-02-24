@@ -1,27 +1,17 @@
 import Image from "next/image";
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import MainSlider from "./_components/MainSilder/MainSlider";
+import CategorySlider from "./_components/CategorySlider/CategorySlider";
+import HeroSlider from "./_components/HeroSlider/HeroSLider";
+import Products from "./products/page";
 
 export default function Home() {
   return (
-<Card>
-  <CardHeader>
-    <CardTitle>Card Title</CardTitle>
-    <CardDescription>Card Description</CardDescription>
-    <CardAction>Card Action</CardAction>
-  </CardHeader>
-  <CardContent>
-    <p>Card Content</p>
-  </CardContent>
-  <CardFooter>
-    <p>Card Footer</p>
-  </CardFooter>
-</Card>  );
+    <>
+      {/* <HeroSlider/> */}
+      <MainSlider />
+      <CategorySlider />
+
+      <Products/>
+    </>
+  );
 }
